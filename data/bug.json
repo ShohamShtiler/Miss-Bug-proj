@@ -1,37 +1,37 @@
 [
     {
-      "_id": "abc123",
-      "title": "Cannot save a new car",
-      "description": "Problem when clicking Save",
-      "severity": 3,
-      "createdAt": 1542107359454
-    },
-    {
-      "_id": "b001",
-      "title": "Page crashes on login",
-      "description": "Login page crashes after entering correct credentials",
-      "severity": 5,
-      "createdAt": 1642107359000
-    },
-    {
-      "_id": "b002",
-      "title": "Missing logout button",
-      "description": "Logout button not visible in the user dashboard",
-      "severity": 2,
-      "createdAt": 1643107359000
-    },
-    {
-      "_id": "b003",
-      "title": "Form validation not working",
-      "description": "Form allows submitting without required fields",
-      "severity": 4,
-      "createdAt": 1644107359000
-    },
-    {
-      "_id": "b004",
-      "title": "Broken image on homepage",
-      "description": "Banner image is not loading properly on homepage",
-      "severity": 1,
-      "createdAt": 1645107359000
-    }
-  ]
+        "_id": "abc123",
+        "title": "Cannot save a new car",
+        "description": "Problem when clicking Save",
+        "severity": 3,
+        "createdAt": 1542107359454
+      },
+      {
+        "_id": "b001",
+        "title": "Page crashes on login",
+        "description": "Login page crashes after entering correct credentials",
+        "severity": 5,
+        "createdAt": 1642107359000
+      },
+      {
+        "_id": "b002",
+        "title": "Missing logout button",
+        "description": "Logout button not visible in the user dashboard",
+        "severity": 2,
+        "createdAt": 1643107359000
+      },
+      {
+        "_id": "b003",
+        "title": "Form validation not working",
+        "description": "Form allows submitting without required fields",
+        "severity": 4,
+        "createdAt": 1644107359000
+      },
+      {
+        "_id": "b004",
+        "title": "Broken image on homepage",
+        "description": "Banner image is not loading properly on homepage",
+        "severity": 1,
+        "createdAt": 1645107359000
+      }
+]
