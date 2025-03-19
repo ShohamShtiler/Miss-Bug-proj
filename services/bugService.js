@@ -1,4 +1,4 @@
-import { utilService } from "./util.service.js"
+import { utilService } from "./utilService.js"
 import fs from 'fs'
 
 const bugs = utilService.readJsonFile('data/bug.json')
