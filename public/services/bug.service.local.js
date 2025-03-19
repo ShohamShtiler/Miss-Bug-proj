@@ -53,21 +53,25 @@ function _createBugs() {
     bugs = [
         {
             title: "Infinite Loop Detected",
+            description: "The app keeps re-rendering the same component endlessly.",
             severity: 4,
             _id: "1NF1N1T3"
         },
         {
             title: "Keyboard Not Found",
+            description: "User's keyboard input not recognized on login screen.",
             severity: 3,
             _id: "K3YB0RD"
         },
         {
             title: "404 Coffee Not Found",
+            description: "Coffe machine intergration failed.No caffeine available",
             severity: 2,
             _id: "C0FF33"
         },
         {
             title: "Unexpected Response",
+            description: "Server returned unexpected JSON format on save.",
             severity: 1,
             _id: "G0053"
         }
