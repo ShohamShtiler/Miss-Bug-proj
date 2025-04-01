@@ -9,7 +9,9 @@ app.use(express.static('public'))
 app.use(cookieParser())
 
 app.get('/api/bug', (req, res) => {
-    bugService.query()
+    const {txt , minSeverity} = req.query
+
+    bugService.query({txt, minSeverity})
         .then(bugs => res.json(bugs))
         .catch(err => {
             loggerService.error('Cannot get bugs', err)

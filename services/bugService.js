@@ -1,7 +1,8 @@
 import { utilService } from "./utilService.js"
 import fs from 'fs'
 
-const bugs = utilService.readJsonFile('data/bug.json')
+const BUGS_FILE = 'data/bug.json'
+const bugs = utilService.readJsonFile(BUGS_FILE)
 
 export const bugService = {
     query,
@@ -10,8 +11,19 @@ export const bugService = {
     save
 }
 
-function query() {
-    return Promise.resolve(bugs)
+export function query(filterBy = {}) {
+    var filterBugs = bugs
+
+    if (filterBy.txt) {
+        const regex = new RegExp(filterBy.txt, 'i')
+        filterBugs = filterBugs.filter(bug => regex.test(bug.title))
+    }
+
+    if (filterBy.minSeverity) {
+        const min = +filterBy.minSeverity
+        filterBugs = filterBugs.filter(bug => bug.severity >= min)
+    }
+    return Promise.resolve(filterBugs)
 }
 
 function getById(bugId) {
