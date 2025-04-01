@@ -1,11 +1,12 @@
-import express from 'express'
+import express, { json } from 'express'
 import { bugService } from './services/bugService.js'
 import { loggerService } from './services/logger.service.js'
-
+import cookieParser from 'cookie-parser'
 const app = express()
 
 app.use(express.json())
 app.use(express.static('public'))
+app.use(cookieParser())
 
 app.get('/api/bug', (req, res) => {
     bugService.query()
@@ -29,11 +30,38 @@ app.get('/api/bug/save', (req, res) => {
 
 app.get('/api/bug/:bugId', (req, res) => {
     const bugId = req.params.bugId
+
+    var visitedBugs = req.cookies.visitedBugs || []
+
+    if (typeof visitedBugs === "string") {
+        try {
+            visitedBugs = JSON.parse(visitedBugs)
+        } catch {
+            visitedBugs = []
+        }
+    }
+
+    if (!visitedBugs.includes(bugId)) visitedBugs.push(bugId)
+
+    if (visitedBugs.length > 3) {
+        console.log('⚠️ User visited too many bugs:', visitedBugs)
+        return res.status(401).send('Wait for a bit')
+    }
+
+    res.cookie('visitedBugs', JSON.stringify(visitedBugs), {
+        maxAge: 7000,
+        httpOnly: false
+    })
+
+    console.log('✅ User visited Bugs', visitedBugs)
+
+
     bugService.getById(bugId).then(bug => {
         if (!bug) return res.status(404).send('Bug not found')
         res.json(bug)
     })
 })
+
 
 app.get('/api/bug/:bugId/remove', (req, res) => {
     const bugId = req.params.bugId
