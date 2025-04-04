@@ -23,6 +23,31 @@ export function query(filterBy = {}) {
         const min = +filterBy.minSeverity
         filterBugs = filterBugs.filter(bug => bug.severity >= min)
     }
+
+    if (filterBy.labels) {
+        const labels = Array.isArray(filterBy.labels)
+          ? filterBy.labels
+          : [filterBy.labels]
+      
+        filterBugs = filterBugs.filter(bug =>
+          bug.labels && bug.labels.some(label => labels.includes(label))
+        )
+      }
+
+    if (filterBy.sortBy) {
+        const dir = +filterBy.sortDir || 1
+        filterBugs.sort((a, b) => {
+            if (a[filterBy.sortBy] > b[filterBy.sortBy]) return dir
+            if (a[filterBy.sortBy] < b[filterBy.sortBy]) return -dir
+            return 0
+        })
+    }
+
+    const PAGE_SIZE = 5
+    const pageIdx = +filterBy.pageIdx || 0
+    const startIdx = pageIdx * PAGE_SIZE
+    filterBugs = filterBugs.slice(startIdx, startIdx + PAGE_SIZE)
+
     return Promise.resolve(filterBugs)
 }
 

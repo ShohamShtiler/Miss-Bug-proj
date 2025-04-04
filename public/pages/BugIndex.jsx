@@ -1,6 +1,7 @@
 const { useState, useEffect } = React
 
-import { bugService } from '../services/bug.service.local.js'
+// import { bugService } from '../services/bug.service.local.js'
+import { bugService } from '../services/bug.service.js'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 
 import { BugFilter } from '../cmps/BugFilter.jsx'
@@ -61,17 +62,43 @@ export function BugIndex() {
         setFilterBy(prevFilter => ({ ...prevFilter, ...filterBy }))
     }
 
+    function onNextPage() {
+        setFilterBy(prev => ({ ...prev, pageIdx: prev.pageIdx + 1 }))
+    }
+
+    function onPrevPage() {
+        setFilterBy(prev => ({ ...prev, pageIdx: Math.max(0, prev.pageIdx - 1) }))
+    }
+
+    function onSortChange(ev) {
+        setFilterBy(prev => ({ ...prev, sortBy: ev.target.value }))
+    }
+
     return <section className="bug-index main-content">
-        
+
         <BugFilter filterBy={filterBy} onSetFilterBy={onSetFilterBy} />
         <header>
             <h3>Bug List</h3>
             <button onClick={onAddBug}>Add Bug</button>
         </header>
-        
-        <BugList 
-            bugs={bugs} 
-            onRemoveBug={onRemoveBug} 
+
+        <BugList
+            bugs={bugs}
+            onRemoveBug={onRemoveBug}
             onEditBug={onEditBug} />
+
+        <div className="bug-controls">
+            <label>Sort by:
+                <select value={filterBy.sortBy} onChange={onSortChange}>
+                    <option value="createdAt">Created At</option>
+                    <option value="severity">Severity</option>
+                    <option value="title">Title</option>
+                </select>
+            </label>
+
+            <button onClick={onPrevPage} disabled={filterBy.pageIdx === 0}>Prev</button>
+            <span>Page: {filterBy.pageIdx + 1}</span>
+            <button onClick={onNextPage}>Next</button>
+        </div>
     </section>
 }
