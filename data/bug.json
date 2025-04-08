@@ -1,21 +1,5 @@
 [
     {
-        "title": "Cannot save a new car",
-        "severity": 3,
-        "creator": {
-            "_id": "u101",
-            "fullname": "Puki Ja",
-            "isAdmin": true
-        },
-        "_id": "lUEMz",
-        "createdAt": 1744119023031,
-        "labels": [
-            "critical",
-            "need-CR"
-        ],
-        "description": "Lorem ipsum..."
-    },
-    {
         "title": "Bug from Postman",
         "severity": 2,
         "creator": {
