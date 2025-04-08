@@ -43,4 +43,5 @@ input, textarea, button, select {
     max-width: 100%;
     min-width: 0;
     font-family: inherit;
+    margin:8px;
 }

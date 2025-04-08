@@ -1,0 +1,64 @@
+[
+  {
+    "_id": "u101",
+    "fullname": "Puki Ja",
+    "username": "puki",
+    "password": "123",
+    "isAdmin": true
+  },
+  {
+    "_id": "u102",
+    "fullname": "Mimi Babayoff",
+    "username": "mimi",
+    "password": "123"
+  },
+  {
+    "_id": "w75r6",
+    "fullname": "Test User",
+    "username": "testuser",
+    "password": "123",
+    "isAdmin": false
+  },
+  {
+    "_id": "l55Bv",
+    "fullname": "Puki Ja",
+    "username": "puki",
+    "password": "123",
+    "isAdmin": false
+  },
+  {
+    "_id": "HOps8",
+    "fullname": "Puki Ja",
+    "username": "puki",
+    "password": "123",
+    "isAdmin": false
+  },
+  {
+    "_id": "9SIm3",
+    "fullname": "Puki Ja",
+    "username": "puki",
+    "password": "123",
+    "isAdmin": false
+  },
+  {
+    "_id": "eaYnh",
+    "fullname": "Puki Ja",
+    "username": "puki",
+    "password": "123",
+    "isAdmin": false
+  },
+  {
+    "_id": "ix8pY",
+    "fullname": "Puki Ja",
+    "username": "puki",
+    "password": "123",
+    "isAdmin": false
+  },
+  {
+    "_id": "o41Kt",
+    "fullname": "shoham shtiler",
+    "username": "shoham",
+    "password": "1234",
+    "isAdmin": false
+  }
+]

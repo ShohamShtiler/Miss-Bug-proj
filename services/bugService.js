@@ -26,13 +26,13 @@ export function query(filterBy = {}) {
 
     if (filterBy.labels) {
         const labels = Array.isArray(filterBy.labels)
-          ? filterBy.labels
-          : [filterBy.labels]
-      
+            ? filterBy.labels
+            : [filterBy.labels]
+
         filterBugs = filterBugs.filter(bug =>
-          bug.labels && bug.labels.some(label => labels.includes(label))
+            bug.labels && bug.labels.some(label => labels.includes(label))
         )
-      }
+    }
 
     if (filterBy.sortBy) {
         const dir = +filterBy.sortDir || 1
@@ -57,24 +57,49 @@ function getById(bugId) {
     return Promise.resolve(bug)
 }
 
-function remove(bugId) {
+function remove(bugId, loggedinUser) {
     const idx = bugs.findIndex(bug => bug._id === bugId)
-    if (idx === -1) return Promise.reject('Cannot remove bug - ' + bugId)
+    if (idx === -1) return Promise.reject('No bug found')
+    if (!isAuthorized(bugs[idx], loggedinUser)) {
+        return Promise.reject('Not authorized delete this bug')
+    }
     bugs.splice(idx, 1)
     return _saveBugsToFile()
 }
 
-function save(bugToSave) {
-    if (bugToSave._id) {
-        const idx = bugs.findIndex(bug => bug._id === bugToSave._id)
-        bugs[idx] = bugToSave
+
+function save(bug, loggedinUser) {
+    console.log('🔧 Saving bug with ID:', bug._id)
+    console.log('Logged-in user:', loggedinUser)
+    console.log('All bug IDs:', bugs.map(b => b._id))
+
+    if (bug._id) {
+        const idx = bugs.findIndex(currBug => currBug._id === bug._id)
+        if (idx === -1) {
+            console.log('❌ Bug not found!')
+            return Promise.reject('No bug found')
+        }
+
+        if (!isAuthorized(bugs[idx], loggedinUser)) {
+            console.log('❌ Not authorized to update bug')
+            return Promise.reject('Not authorized update this bug')
+        }
+
+        bugs[idx] = bug
     } else {
-        bugToSave._id = utilService.makeId()
-        bugToSave.createdAt = Date.now()
-        bugs.unshift(bugToSave)
+        bug._id = utilService.makeId()
+        bug.createdAt = Date.now()
+        bug.labels = ['critical', 'need-CR']
+        bug.description = 'Lorem ipsum...'
+        bugs.push(bug)
     }
 
-    return _saveBugsToFile().then(() => bugToSave)
+    return _saveBugsToFile().then(() => bug)
+}
+
+
+function isAuthorized(bug, loggedinUser) {
+    return bug.creator._id === loggedinUser._id || loggedinUser.isAdmin
 }
 
 function _saveBugsToFile() {
