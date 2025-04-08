@@ -3,6 +3,7 @@ export const userService = {
     signup,
     logout,
     getLoggedInUser,
+    getById,
     query,
     get,
     remove,
@@ -42,6 +43,11 @@ function logout() {
 
 function getLoggedInUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
+}
+
+function getById(userId) {
+    return axios.get(`/api/user/${userId}`)
+        .then(res => res.data)
 }
 
 

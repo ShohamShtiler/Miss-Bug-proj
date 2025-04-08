@@ -31,7 +31,8 @@ export function AppHeader() {
 
                 {user && (
                     <span>
-                        Hello, {user.fullname} <button onClick={onLogout}>Logout</button>
+                        Hello, <NavLink to={`/user/${user._id}`}>{user.fullname}</NavLink>
+                        <button onClick={onLogout}>Logout</button>
                     </span>
                 )}
             </nav>

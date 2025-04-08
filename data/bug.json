@@ -1,113 +1,61 @@
 [
     {
-        "_id": "b001",
-        "title": "Page crashes on login",
-        "description": "Login page crashes after entering correct credentials",
-        "severity": 5,
-        "createdAt": 1642107359000,
-        "labels": [
-            "critical",
-            "login",
-            "backend"
-        ],
-        "creator": {
-            "_id": "u102",
-            "fullname": "Mimi Babayoff"
-        }
-    },
-    {
-        "_id": "b002",
-        "title": "Missing logout button",
-        "description": "Logout button not visible in the user dashboard",
-        "severity": 2,
-        "createdAt": 1643107359000,
-        "labels": [
-            "minor",
-            "UI"
-        ],
-        "creator": {
-            "_id": "u103",
-            "fullname": "Tuki Cohen"
-        }
-    },
-    {
-        "_id": "b003",
-        "title": "Form validation not working",
-        "description": "Form allows submitting without required fields",
-        "severity": 4,
-        "createdAt": 1644107359000,
-        "labels": [
-            "validation",
-            "critical",
-            "frontend"
-        ],
-        "creator": {
-            "_id": "u104",
-            "fullname": "Gili Bloom"
-        }
-    },
-    {
-        "_id": "b004",
-        "title": "Broken image on homepage",
-        "description": "Banner image is not loading properly on homepage",
-        "severity": 1,
-        "createdAt": 1645107359000,
-        "labels": [
-            "UI",
-            "homepage",
-            "minor"
-        ],
-        "creator": {
-            "_id": "u105",
-            "fullname": "Jon Snow"
-        }
-    },
-    {
-        "_id": "b005",
-        "title": "Double-click submits twice",
-        "description": "Clicking the submit button twice quickly submits the form twice",
+        "title": "Cannot save a new car",
         "severity": 3,
-        "createdAt": 1646107359000,
-        "labels": [
-            "form",
-            "duplicate",
-            "UX"
-        ],
         "creator": {
-            "_id": "u106",
-            "fullname": "Arya Stark"
-        }
+            "_id": "u101",
+            "fullname": "Puki Ja",
+            "isAdmin": true
+        },
+        "_id": "lUEMz",
+        "createdAt": 1744119023031,
+        "labels": [
+            "critical",
+            "need-CR"
+        ],
+        "description": "Lorem ipsum..."
     },
     {
-        "_id": "b006",
-        "title": "Scroll doesn't work on mobile",
-        "description": "On iOS, scrolling inside modals is completely disabled",
-        "severity": 4,
-        "createdAt": 1647107359000,
-        "labels": [
-            "mobile",
-            "UI",
-            "critical"
-        ],
+        "title": "Bug from Postman",
+        "severity": 2,
         "creator": {
-            "_id": "u107",
-            "fullname": "Lior Cohen"
-        }
+            "_id": "u101",
+            "fullname": "Puki Ja",
+            "isAdmin": true
+        },
+        "_id": "ZATfU",
+        "createdAt": 1744113010612,
+        "labels": [
+            "critical",
+            "need-CR"
+        ],
+        "description": "Lorem ipsum..."
     },
     {
-        "_id": "b007",
-        "title": "Incorrect total in cart",
-        "description": "Cart shows wrong total when item quantity is updated quickly",
-        "severity": 5,
-        "createdAt": 1648107359000,
+        "title": "Bug from Postman",
+        "severity": 2,
+        "_id": "bdERW",
+        "createdAt": 1744110540455,
         "labels": [
-            "cart",
-            "math",
-            "backend"
+            "critical",
+            "need-CR"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, earum sed corrupti voluptatum voluptatem at."
+    },
+    {
+        "_id": "b009",
+        "title": "User profile image not saving",
+        "description": "Profile image upload looks successful, but doesn’t save on refresh",
+        "severity": 3,
+        "createdAt": 1650107359000,
+        "labels": [
+            "upload",
+            "profile",
+            "bug"
         ],
         "creator": {
-            "_id": "u108",
-            "fullname": "Gidi Ron"
+            "_id": "u110",
+            "fullname": "Erez Sharabi"
         }
     },
     {
@@ -127,62 +75,114 @@
         }
     },
     {
-        "_id": "b009",
-        "title": "User profile image not saving",
-        "description": "Profile image upload looks successful, but doesn’t save on refresh",
-        "severity": 3,
-        "createdAt": 1650107359000,
+        "_id": "b007",
+        "title": "Incorrect total in cart",
+        "description": "Cart shows wrong total when item quantity is updated quickly",
+        "severity": 5,
+        "createdAt": 1648107359000,
         "labels": [
-            "upload",
-            "profile",
-            "bug"
+            "cart",
+            "math",
+            "backend"
         ],
         "creator": {
-            "_id": "u110",
-            "fullname": "Erez Sharabi"
+            "_id": "u108",
+            "fullname": "Gidi Ron"
         }
     },
     {
-        "title": "Bug from Postman",
-        "severity": 2,
-        "_id": "bdERW",
-        "createdAt": 1744110540455,
+        "_id": "b006",
+        "title": "Scroll doesn't work on mobile",
+        "description": "On iOS, scrolling inside modals is completely disabled",
+        "severity": 4,
+        "createdAt": 1647107359000,
         "labels": [
-            "critical",
-            "need-CR"
+            "mobile",
+            "UI",
+            "critical"
         ],
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, earum sed corrupti voluptatum voluptatem at."
-    },
-    {
-        "title": "Bug from Postman",
-        "severity": 2,
         "creator": {
-            "_id": "u101",
-            "fullname": "Puki Ja",
-            "isAdmin": true
-        },
-        "_id": "ZATfU",
-        "createdAt": 1744113010612,
-        "labels": [
-            "critical",
-            "need-CR"
-        ],
-        "description": "Lorem ipsum..."
+            "_id": "u107",
+            "fullname": "Lior Cohen"
+        }
     },
     {
-        "title": "Cannot save a new car",
+        "_id": "b005",
+        "title": "Double-click submits twice",
+        "description": "Clicking the submit button twice quickly submits the form twice",
         "severity": 3,
+        "createdAt": 1646107359000,
+        "labels": [
+            "form",
+            "duplicate",
+            "UX"
+        ],
         "creator": {
-            "_id": "u101",
-            "fullname": "Puki Ja",
-            "isAdmin": true
-        },
-        "_id": "lUEMz",
-        "createdAt": 1744119023031,
+            "_id": "u106",
+            "fullname": "Arya Stark"
+        }
+    },
+    {
+        "_id": "b004",
+        "title": "Broken image on homepage",
+        "description": "Banner image is not loading properly on homepage",
+        "severity": 1,
+        "createdAt": 1645107359000,
+        "labels": [
+            "UI",
+            "homepage",
+            "minor"
+        ],
+        "creator": {
+            "_id": "u105",
+            "fullname": "Jon Snow"
+        }
+    },
+    {
+        "_id": "b003",
+        "title": "Form validation not working",
+        "description": "Form allows submitting without required fields",
+        "severity": 4,
+        "createdAt": 1644107359000,
+        "labels": [
+            "validation",
+            "critical",
+            "frontend"
+        ],
+        "creator": {
+            "_id": "u104",
+            "fullname": "Gili Bloom"
+        }
+    },
+    {
+        "_id": "b002",
+        "title": "Missing logout button",
+        "description": "Logout button not visible in the user dashboard",
+        "severity": 2,
+        "createdAt": 1643107359000,
+        "labels": [
+            "minor",
+            "UI"
+        ],
+        "creator": {
+            "_id": "u103",
+            "fullname": "Tuki Cohen"
+        }
+    },
+    {
+        "_id": "b001",
+        "title": "Page crashes on login",
+        "description": "Login page crashes after entering correct credentials",
+        "severity": 5,
+        "createdAt": 1642107359000,
         "labels": [
             "critical",
-            "need-CR"
+            "login",
+            "backend"
         ],
-        "description": "Lorem ipsum..."
+        "creator": {
+            "_id": "u102",
+            "fullname": "Mimi Babayoff"
+        }
     }
 ]

@@ -9,6 +9,7 @@ import { BugIndex } from './pages/BugIndex.jsx'
 import { BugDetails } from './pages/BugDetails.jsx'
 import { AboutUs } from './pages/AboutUs.jsx'
 import { UserProfile } from './pages/UserProfile.jsx'
+import { UserDetails } from './pages/UserDetails.jsx'
 
 export function App() {
     return <Router>
@@ -22,7 +23,9 @@ export function App() {
                     <Route path="/bug/:bugId" element={<BugDetails />} />
                     <Route path="/about" element={<AboutUs />} />
                     <Route path="/user" element={<UserProfile />} />
+                    <Route path="/user/:userId" element={<UserDetails />} />
                     <Route path="/profile" element={<UserProfile />} />
+                    
                 </Routes>
             </main>
             <AppFooter />

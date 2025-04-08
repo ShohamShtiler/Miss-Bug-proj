@@ -42,6 +42,11 @@
     padding: 5px;
 }
 
+.app-header span button {
+    border-radius: 12px;
+    margin-left: 8px;
+}
+
 .modal-backdrop {
     position: fixed;
     inset: 0;
