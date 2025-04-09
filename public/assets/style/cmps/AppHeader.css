@@ -1,6 +1,6 @@
 .app-header {
     padding-block: 1em;
-    background-color: var(--gray1);
+    background-color: var(--bg1);
     color: whitesmoke;
 }
 
@@ -21,6 +21,7 @@
 }
 
 .app-header nav a {
+    font-weight: bold;
     border-block-end: 1px solid transparent;
     text-decoration: none;
 }
@@ -30,16 +31,17 @@
 }
 
 .app-header nav a.active {
-    color: var(--color3);
-    border-block-end: 1px solid var(--color3);
+    color: #AFC8AD;
+    border-block-end: 1px solid #AFC8AD;
 }
 
 .app-header span {
     font-size: 14px;
     font-weight: bold;
-    background-color: #328E6E;
-    border-radius: 8px;
-    padding: 5px;
+    background-color: #AFC8AD;
+    color:#222222;
+    border-radius: 12px;
+    padding: 8px;
 }
 
 .app-header span button {

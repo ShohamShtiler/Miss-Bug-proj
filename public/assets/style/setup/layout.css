@@ -29,4 +29,7 @@
 
 .container {
     padding: 1em;
+    background-color: #AFC8AD;
+    border-right: solid 10px var(--bg1);
+    border-left: solid 10px var(--bg1);
 }

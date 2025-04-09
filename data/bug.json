@@ -2,22 +2,6 @@
     {
         "title": "Bug from Postman",
         "severity": 2,
-        "creator": {
-            "_id": "u101",
-            "fullname": "Puki Ja",
-            "isAdmin": true
-        },
-        "_id": "ZATfU",
-        "createdAt": 1744113010612,
-        "labels": [
-            "critical",
-            "need-CR"
-        ],
-        "description": "Lorem ipsum..."
-    },
-    {
-        "title": "Bug from Postman",
-        "severity": 2,
         "_id": "bdERW",
         "createdAt": 1744110540455,
         "labels": [
